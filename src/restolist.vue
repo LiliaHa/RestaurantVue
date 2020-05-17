@@ -21,8 +21,8 @@
             <input type="text" v-model="resto.rue">
         </div>
         <div>
-                <label for="rue">Numero de rue:</label>
-                <input type="number" v-model="resto.numero">
+            <label for="rue">Numero de rue:</label>
+            <input type="number" v-model="resto.numero">
         </div>
         <div>
             <label for="rue">Code Postal :</label>
@@ -64,7 +64,6 @@
                     tarif:"none",
                 },
 
-
                 restolist:[],
                 url:"http://localhost:8000/api/restaurant"
             }
@@ -76,7 +75,6 @@
                 .then((response) => {
                     this.restolist = response.data;
                     console.log(this.restolist);
-
 
                 })
                 .catch((error) =>  {
@@ -97,7 +95,7 @@
                 })
             },
             update(resto) {
-                axios.put(this.url + "/update/" + resto.idrestaurant,resto)
+                axios.put(this.url + "/update/" + resto.idRestaurant,resto)
                 .then((response) =>{console.log(response.data);
                 })
                 .catch((error) => {
@@ -106,7 +104,7 @@
                 })
             },
             deleteResto(id) {
-                axios.delete(this.url+ "/delete/" + resto.idrestaurant,resto)
+                axios.delete(this.url+ "/delete/" + id)
                 .then((response) => {
                     this.get_restolist();
                     console.log(response.data);
