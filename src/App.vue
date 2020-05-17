@@ -1,15 +1,16 @@
  <template>
   <div id="app"> <h1> Repertoire de restaurants</h1>
     <Restolist></Restolist>
-    
+    <Typelist></Typelist>
   </div>
 </template>
 
 <script>
   import Restolist from './restolist'
+  import Typelist from './typelist'
   export default {
   name: 'app',
-  components: {Restolist},
+  components: {Restolist,Typelist},
   data () {
     return {
 
